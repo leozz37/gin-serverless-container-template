@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/leozz37/gin-serverless-container-template/routes"
 )
 
 func main() {
@@ -15,11 +15,5 @@ func main() {
 	}
 
 	// Gin setup
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run()
+	routes.InitRoutes()
 }
