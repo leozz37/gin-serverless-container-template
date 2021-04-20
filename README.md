@@ -14,7 +14,6 @@
   - [Makefile](#makefile)
   - [Docker](#docker)
   - [Docker-compose](#docker-compose)
-  - [Kubernetes](#kubernetes)
 - [Deploying](#deploying)
   - [Push container](#build-container)
   - [Deploy Cloud Run](#deploy-cloud-run)
