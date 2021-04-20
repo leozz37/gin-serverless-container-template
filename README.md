@@ -82,3 +82,27 @@ To run the docker-compose:
 ```shell
 $ docker-compose up
 ```
+
+## Testing
+
+The unit testes are written with the default testing tool of Golang.
+
+### Unit Tests
+
+To run the unit tests, do the following:
+
+```shell
+$ go test -v ./...
+```
+
+To run the tests with coverage, do the following:
+
+```shell
+$ go test -v -covermode=count ./...
+```
+
+Or use the `Makefile`:
+
+```shel
+$ make test
+```
