@@ -15,7 +15,7 @@
   - [Docker](#docker)
   - [Docker-compose](#docker-compose)
 - [Deploying](#deploying)
-  - [Push container](#build-container)
+  - [Push Docker Image](#build-docker-image)
   - [Deploy Cloud Run](#deploy-cloud-run)
 - [Testing](#testing)
   - [Unit Tests](#unit-tests)
@@ -83,6 +83,37 @@ To run the docker-compose:
 $ docker-compose up
 ```
 
+## Deploying
+
+To deploy your container to [Google Cloud Run](https://cloud.google.com/run), follow these steps:
+
+### Push Docker Image
+
+First, push your Docker image to GCP's registry with the Google Cloud Build. We've setted up the pushing instructions on `cloudbuild.yaml` file:
+
+```shell
+$ gcloud build submit
+```
+
+Take note of your Docker image url.
+
+### Deploy Cloud Run
+
+First you need a Google Cloud project set up and a billing account. Take a look into [this docs](https://cloud.google.com/resource-manager/docs/creating-managing-projects) on how to create a project if you don't have one, and your billing account is setted for it (run: `$ open "https://console.cloud.google.com/billing/linkedaccount?project=$PROJECT_ID"`). Now let's get our application into production with [Terraform](https://www.terraform.io/). Cd to `terraform/` directory and init it:
+
+```shell
+$ cd terraform/
+
+$ terraform init
+```
+
+Now apply the infra into your Google Cloud project:
+
+```shell
+$ terraform apply
+```
+
+You will be asked for your `PROJECT_ID` and the `DOCKER_IMAGE_URL` of your application.
 ## Testing
 
 The unit testes are written with the default testing tool of Golang.
