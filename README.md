@@ -106,3 +106,15 @@ Or use the `Makefile`:
 ```shel
 $ make test
 ```
+
+## Continuous Integration
+
+We use GitHub Actions for our CI tool. Right now we have four workflows, and you can check they state [here](https://github.com/leozz37/gin-serverless-container-template/actions):
+
+[![Build](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/build.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/build.yml) - Building the binary status.
+
+[![Unit Tests](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/unit_tests.yml) - Unit tests status.
+
+[![Docker](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml) - Building the Docker image status.
+
+[![Terraform](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml) - Terraform plan
