@@ -9,6 +9,7 @@
 [![Docker](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/docker.yml)
 [![Terraform](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml/badge.svg)](https://github.com/leozz37/gin-serverless-container-template/actions/workflows/terraform.yml)
 
+- [Quick Start](#quick-start)
 - [Building](#building)
   - [Binary](#binary)
   - [Makefile](#makefile)
@@ -20,6 +21,28 @@
 - [Testing](#testing)
   - [Unit Tests](#unit-tests)
 - [Continuous Integration](#continuous-integration)
+
+## Quick Start
+
+To make your app into production, first create a GCP project and set a billing account for it. And then run the following commands:
+
+Build and push the container to GCP container image registry:
+
+```shell
+$ gcloud builds submit
+```
+
+Apply the Terraform infra to GCP:
+
+```
+$ cd terraform/
+
+$ terraform init
+
+$ terraform apply
+```
+
+You will be asked for the project id and the Docker image URL.
 
 ## Building
 
